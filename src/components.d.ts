@@ -23,6 +23,17 @@ export namespace Components {
     'match'?: MatchResults;
   }
 
+  interface AppListNav {
+    'max': number;
+    'page': number;
+  }
+  interface AppListNavAttributes extends StencilHTMLAttributes {
+    'max': number;
+    'onPageDecrement'?: (event: CustomEvent) => void;
+    'onPageIncrement'?: (event: CustomEvent) => void;
+    'page': number;
+  }
+
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
@@ -53,6 +64,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'AppItem': Components.AppItem;
+    'AppListNav': Components.AppListNav;
     'AppRoot': Components.AppRoot;
     'AppStories': Components.AppStories;
     'AppStory': Components.AppStory;
@@ -61,6 +73,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'app-item': Components.AppItemAttributes;
+    'app-list-nav': Components.AppListNavAttributes;
     'app-root': Components.AppRootAttributes;
     'app-stories': Components.AppStoriesAttributes;
     'app-story': Components.AppStoryAttributes;
@@ -72,6 +85,12 @@ declare global {
   var HTMLAppItemElement: {
     prototype: HTMLAppItemElement;
     new (): HTMLAppItemElement;
+  };
+
+  interface HTMLAppListNavElement extends Components.AppListNav, HTMLStencilElement {}
+  var HTMLAppListNavElement: {
+    prototype: HTMLAppListNavElement;
+    new (): HTMLAppListNavElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -100,6 +119,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'app-item': HTMLAppItemElement
+    'app-list-nav': HTMLAppListNavElement
     'app-root': HTMLAppRootElement
     'app-stories': HTMLAppStoriesElement
     'app-story': HTMLAppStoryElement
@@ -108,6 +128,7 @@ declare global {
 
   interface ElementTagNameMap {
     'app-item': HTMLAppItemElement;
+    'app-list-nav': HTMLAppListNavElement;
     'app-root': HTMLAppRootElement;
     'app-stories': HTMLAppStoriesElement;
     'app-story': HTMLAppStoryElement;

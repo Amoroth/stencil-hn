@@ -1,4 +1,4 @@
-import { Component, State, Prop, Watch } from '@stencil/core'
+import { Component, State, Prop, Watch, Listen } from '@stencil/core'
 import { MatchResults, RouterHistory } from '@stencil/router'
 
 type storiesTypes = 'topstories' | 'newstories' | 'beststories'
@@ -54,14 +54,18 @@ export class AppStories {
     this.stories = formattedStories
   }
 
+  @Listen('pageIncrement')
   incrementPage() {
+    console.log('increment')
     let nextPage = this.getCurrentPage() + 1
     if (nextPage < 2) nextPage = 2
     else if (nextPage > 25) nextPage = 25
     this.history.replace(`/${this.match.params.stories}/${nextPage}`)
   }
-
+  
+  @Listen('pageDecrement')
   decrementPage() {
+    console.log('decrement')
     let nextPage = this.getCurrentPage() - 1
     if (nextPage < 2) {
       this.history.replace(`/${this.match.params.stories}`)
@@ -75,9 +79,7 @@ export class AppStories {
     let page = Math.max(this.getCurrentPage() - 1, 0)
     return (
       <div>
-        <button onClick={() => this.decrementPage()} disabled={page === 0}>Prev</button>
-        <span>{page + 1}</span>
-        <button onClick={() => this.incrementPage()}>Next</button>
+        <app-list-nav page={page} max={this.stories.length} />
         {this.stories[page].map((val) => <app-story storyId={val} key={val} />)}
       </div>
     )
