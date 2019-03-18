@@ -25,8 +25,7 @@ export class AppRoot {
               <stencil-route url='/' routeRender={() => <stencil-router-redirect url={'/top'} />} exact={true} />
               <stencil-route url='/item/:id' component='app-item' />
               <stencil-route url='/user/:id' component='app-user' />
-              <stencil-route url='/:stories/:page' component='app-stories' />
-              <stencil-route url='/:stories' component='app-stories' />
+              <stencil-route url='/:stories/:page?' component='app-stories' />
             </stencil-route-switch>
           </stencil-router>
         </main>
