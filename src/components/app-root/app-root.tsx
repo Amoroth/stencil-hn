@@ -12,8 +12,9 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <img src='../../assets/icon/icon.png' style={{height: '50px', width: '50px'}} />
-          <h1>Stencil Hacker News</h1>
+          <stencil-route-link url='/top'>
+            <img src='../../assets/icon/icon.png' style={{height: '40px', width: '40px'}} />
+          </stencil-route-link>
           <stencil-route-link url='/top'>Top</stencil-route-link>
           <stencil-route-link url='/new'>New</stencil-route-link>
           <stencil-route-link url='/best'>Best</stencil-route-link>
