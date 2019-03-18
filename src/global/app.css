@@ -8,6 +8,10 @@
   Any global CSS variables should also be applied here.
 */
 
+:root {
+  --primary-color: #5851ff;
+  --secondary-color: #16161d;
+}
 
 body {
   margin: 0px;
