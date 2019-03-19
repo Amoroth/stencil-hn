@@ -1,7 +1,9 @@
 import { Component, Prop, Event, EventEmitter } from '@stencil/core'
 
 @Component({
-  tag: 'app-list-nav'
+  tag: 'app-list-nav',
+  styleUrl: 'app-list-nav.css',
+  shadow: true
 })
 export class AppListNav {
   @Prop() page!: number
@@ -13,9 +15,9 @@ export class AppListNav {
   render() {
     return (
       <div>
-        <button onClick={() => this.pageDecrement.emit()} disabled={this.page === 0}>Prev</button>
+        <a onClick={() => this.pageDecrement.emit()}>Prev</a>
         <span>{this.page + 1}/{this.max}</span>
-        <button onClick={() => this.pageIncrement.emit()}>Next</button>
+        <a onClick={() => this.pageIncrement.emit()}>Next</a>
       </div>
     )
   }
