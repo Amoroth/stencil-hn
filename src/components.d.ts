@@ -16,6 +16,9 @@ import {
 
 export namespace Components {
 
+  interface AppHeader {}
+  interface AppHeaderAttributes extends StencilHTMLAttributes {}
+
   interface AppItem {
     'match': MatchResults;
   }
@@ -63,6 +66,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppHeader': Components.AppHeader;
     'AppItem': Components.AppItem;
     'AppListNav': Components.AppListNav;
     'AppRoot': Components.AppRoot;
@@ -72,6 +76,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'app-header': Components.AppHeaderAttributes;
     'app-item': Components.AppItemAttributes;
     'app-list-nav': Components.AppListNavAttributes;
     'app-root': Components.AppRootAttributes;
@@ -80,6 +85,12 @@ declare global {
     'app-user': Components.AppUserAttributes;
   }
 
+
+  interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {}
+  var HTMLAppHeaderElement: {
+    prototype: HTMLAppHeaderElement;
+    new (): HTMLAppHeaderElement;
+  };
 
   interface HTMLAppItemElement extends Components.AppItem, HTMLStencilElement {}
   var HTMLAppItemElement: {
@@ -118,6 +129,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-header': HTMLAppHeaderElement
     'app-item': HTMLAppItemElement
     'app-list-nav': HTMLAppListNavElement
     'app-root': HTMLAppRootElement
@@ -127,6 +139,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'app-header': HTMLAppHeaderElement;
     'app-item': HTMLAppItemElement;
     'app-list-nav': HTMLAppListNavElement;
     'app-root': HTMLAppRootElement;

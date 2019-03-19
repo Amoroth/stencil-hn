@@ -11,17 +11,7 @@ export class AppRoot {
   render() {
     return (
       <div>
-        <header>
-          <stencil-route-link url='/top'>
-            <img src='../../assets/icon/icon.png' style={{height: '40px', width: '40px'}} />
-          </stencil-route-link>
-          <stencil-route-link url='/top'>Top</stencil-route-link>
-          <stencil-route-link url='/new'>New</stencil-route-link>
-          <stencil-route-link url='/show'>Show</stencil-route-link>
-          <stencil-route-link url='/ask'>Ask</stencil-route-link>
-          <stencil-route-link url='/job'>Jobs</stencil-route-link>
-        </header>
-
+        <app-header />
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
