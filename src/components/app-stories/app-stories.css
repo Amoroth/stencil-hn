@@ -3,3 +3,7 @@
 .stories-container {
   padding-top: 56px;
 }
+
+.stories-container-inner {
+  padding-top: 42px;
+}

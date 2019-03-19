@@ -87,7 +87,9 @@ export class AppStories {
     return (
       <div class="column stories-container">
         <app-list-nav page={page} max={this.stories.length} />
-        {this.stories[page].map((val) => <app-story storyId={val} key={val} />)}
+        <div class="stories-container-inner">
+          {this.stories[page].map((val) => <app-story storyId={val} key={val} />)}
+        </div>
       </div>
     )
   }
