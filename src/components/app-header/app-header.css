@@ -22,6 +22,11 @@ stencil-route-link {
 a {
   color: gainsboro;
   text-decoration: none;
+  transition: color .2s;
+}
+
+a:hover {
+  color: white;
 }
 
 a img {
