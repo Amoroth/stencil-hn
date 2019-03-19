@@ -1,7 +1,7 @@
 import { Component, State, Prop, Watch, Listen } from '@stencil/core'
 import { MatchResults, RouterHistory } from '@stencil/router'
 
-type storiesTypes = 'topstories' | 'newstories' | 'beststories'
+type storiesTypes = 'topstories' | 'newstories' | 'showstories' | 'askstories' | 'jobstories'
 
 @Component({
   tag: 'app-stories'
@@ -31,15 +31,21 @@ export class AppStories {
     let storiesUrl: storiesTypes
     switch(this.match.params.stories) {
       case 'top':
-      storiesUrl = 'topstories'
+        storiesUrl = 'topstories'
       break
       case 'new':
-      storiesUrl = 'newstories'
+        storiesUrl = 'newstories'
         break
-        case 'best':
-        storiesUrl = 'beststories'
+      case 'show':
+        storiesUrl = 'showstories'
         break
-        default: storiesUrl='topstories'
+      case 'ask':
+        storiesUrl = 'askstories'
+        break
+      case 'job':
+        storiesUrl = 'jobstories'
+        break
+      default: storiesUrl='topstories'
     }
     return storiesUrl
   }

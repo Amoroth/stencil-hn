@@ -17,7 +17,9 @@ export class AppRoot {
           </stencil-route-link>
           <stencil-route-link url='/top'>Top</stencil-route-link>
           <stencil-route-link url='/new'>New</stencil-route-link>
-          <stencil-route-link url='/best'>Best</stencil-route-link>
+          <stencil-route-link url='/show'>Show</stencil-route-link>
+          <stencil-route-link url='/ask'>Ask</stencil-route-link>
+          <stencil-route-link url='/job'>Jobs</stencil-route-link>
         </header>
 
         <main>
