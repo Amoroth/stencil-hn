@@ -4,7 +4,8 @@ import { MatchResults, RouterHistory } from '@stencil/router'
 type storiesTypes = 'topstories' | 'newstories' | 'showstories' | 'askstories' | 'jobstories'
 
 @Component({
-  tag: 'app-stories'
+  tag: 'app-stories',
+  styleUrl: 'app-stories.css'
 })
 export class AppStories {
   @Prop() history: RouterHistory
@@ -84,7 +85,7 @@ export class AppStories {
     // if page is 0 or none, ensure not to go to negatives
     let page = Math.max(this.getCurrentPage() - 1, 0)
     return (
-      <div>
+      <div class="column stories-container">
         <app-list-nav page={page} max={this.stories.length} />
         {this.stories[page].map((val) => <app-story storyId={val} key={val} />)}
       </div>
