@@ -9,7 +9,7 @@ export class AppHeader {
   render() {
     return (
       <header>
-        <nav>
+        <nav class="column">
           <stencil-route-link url='/top'>
             <img src='../../assets/icon/icon.png' />
           </stencil-route-link>
