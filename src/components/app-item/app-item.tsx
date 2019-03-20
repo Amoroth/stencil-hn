@@ -32,8 +32,8 @@ export class AppItem {
             <a href={this.storyObject.url}>{this.storyObject.title}</a>
             <span> ({truncateURL(this.storyObject.url)})</span>
           </h2>
-          <span class="meta">{this.storyObject.score} points |</span>
-          <span> by <stencil-route-link>{this.storyObject.by}</stencil-route-link> |</span>
+          <span>{this.storyObject.score} points |</span>
+          <span> by <stencil-route-link url={`/user/${this.storyObject.by}`}>{this.storyObject.by}</stencil-route-link> |</span>
           <span> {this.relativeTime}</span>
         </div>
         <div class="comments">

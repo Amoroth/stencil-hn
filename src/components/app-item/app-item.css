@@ -10,14 +10,25 @@ h2 a {
 }
 
 h2 span {
-  color: rgb(125, 125, 125);
   font-size: 1rem;
   font-weight: normal;
   padding-left: 15px;
 }
 
+span {
+  color: rgb(125, 125, 125);
+}
+
 :host > div {
   border-top: 1px solid transparent;
+}
+
+a {
+  color: rgb(125, 125, 125);
+}
+
+a:hover {
+  color: var(--primary-color)
 }
 
 .story-info {
