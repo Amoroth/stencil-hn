@@ -32,9 +32,9 @@ span a {
 stencil-route-link a {
   color: rgb(125, 125, 125);
   text-decoration: underline;
+  transition: color .1s;
 }
 
 stencil-route-link a:hover {
   color: var(--primary-color);
-  text-decoration: underline;
 }

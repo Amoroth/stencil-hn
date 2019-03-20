@@ -25,6 +25,7 @@ span {
 
 a {
   color: rgb(125, 125, 125);
+  transition: color .1s
 }
 
 a:hover {
