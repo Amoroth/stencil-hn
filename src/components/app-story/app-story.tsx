@@ -2,6 +2,7 @@ import { Component, Prop, State } from '@stencil/core'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { IStory } from '../../global/types'
+import { truncateURL } from '../../global/app'
 
 @Component({
   tag: 'app-story',
@@ -22,15 +23,13 @@ export class AppStory {
     this.relativeTime = dayjs(jsonResponse.time * 1000).fromNow()
   }
 
-  truncateURL = () => this.storyObject.url.match(/^(?:https?:\/\/)?(?:www\.)?([^:\/\n]+)/i)[1]
-
   render() {
     return (
       <li>
         <span class="score">{this.storyObject.score}</span>
         <span>
           <a href={this.storyObject.url || `/item/${this.storyId}`}>{this.storyObject.title}</a>
-          {this.storyObject.url ? <span class="meta"> ({this.truncateURL()})</span> : null}
+          {this.storyObject.url ? <span class="meta"> ({truncateURL(this.storyObject.url)})</span> : null}
         </span>
         <br />
         <span class="meta">
