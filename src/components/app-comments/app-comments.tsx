@@ -9,6 +9,7 @@ import { IComment } from '../../global/types'
 })
 export class AppComments {
   @Prop() comments!: number[]
+  @Prop() indent: boolean
 
   @State() commentObjects: IComment[] = []
 
@@ -25,7 +26,7 @@ export class AppComments {
       return <app-comment comment={comment} />
     })
     return (
-      <ul>
+      <ul style={{ marginLeft: this.indent ? '30px' : '0'}}>
         {comments}
       </ul>
     )

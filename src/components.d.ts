@@ -28,9 +28,11 @@ export namespace Components {
 
   interface AppComments {
     'comments': number[];
+    'indent': boolean;
   }
   interface AppCommentsAttributes extends StencilHTMLAttributes {
     'comments': number[];
+    'indent'?: boolean;
   }
 
   interface AppHeader {}

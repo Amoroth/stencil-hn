@@ -1,6 +1,6 @@
 li {
   border-top: 1px solid #eee;
-  padding: 15px 0;
+  padding: 15px 0 0 0;
 }
 
 a {
@@ -14,8 +14,4 @@ a:hover {
 .meta {
   color: rgb(125, 125, 125);
   font-size: .9em;
-}
-
-p {
-  margin: 15px 0 0 0;
 }

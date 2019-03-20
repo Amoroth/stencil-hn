@@ -26,6 +26,7 @@ export class AppComment {
           <span> {this.relativeTime}</span>
         </div>
         <p class="comment-text" innerHTML={this.comment.text}></p>
+        {this.comment.kids ? <app-comments indent comments={this.comment.kids} /> : null}
       </li>
     )
   }
