@@ -10,6 +10,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      baseUrl: '/stencil-hn',
       // uncomment the following line to disable service workers in production
       // serviceWorker: null
     },
