@@ -13,7 +13,7 @@ export class AppRoot {
       <div>
         <app-header />
         <main>
-          <stencil-router>
+          <stencil-router root="/stencil-hn">
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' routeRender={() => <stencil-router-redirect url={'/top'} />} exact={true} />
               <stencil-route url='/item/:id' component='app-item' />
