@@ -27,15 +27,17 @@ export class AppStory {
   render() {
     return (
       <li>
-        <span>{this.storyObject.score}</span>
+        <span class="score">{this.storyObject.score}</span>
         <span>
           <a href={this.storyObject.url || `/item/${this.storyId}`}>{this.storyObject.title}</a>
-          {this.storyObject.url ? <span>({this.truncateURL()})</span> : null}
+          {this.storyObject.url ? <span class="meta"> ({this.truncateURL()})</span> : null}
         </span>
         <br />
-        <span>by <stencil-route-link url={`/user/${this.storyObject.by}`}>{this.storyObject.by}</stencil-route-link></span>
-        <span> {this.relativeTime}</span>
-        <span> | Comments: <stencil-route-link url={`/item/${this.storyId}`}>{this.storyObject.descendants}</stencil-route-link></span>
+        <span class="meta">
+          <span>by <stencil-route-link url={`/user/${this.storyObject.by}`}>{this.storyObject.by}</stencil-route-link></span>
+          <span> {this.relativeTime}</span>
+          <span> | <stencil-route-link url={`/item/${this.storyId}`}>{this.storyObject.descendants} comments</stencil-route-link></span>
+        </span>
       </li>
     )
   }

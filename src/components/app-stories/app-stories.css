@@ -3,3 +3,15 @@
 .stories-container {
   padding-top: 107px;
 }
+
+ul {
+  margin: 6px 0;
+  padding: 0;
+  transition: margin .4s;
+}
+
+@media screen and (min-width: 800px) {
+  ul {
+    margin: 20px 0;
+  }
+}
