@@ -3,7 +3,9 @@ import { IComment } from '../../global/types'
 
 
 @Component({
-  tag: 'app-comments'
+  tag: 'app-comments',
+  styleUrl: 'app-comments.css',
+  shadow: true
 })
 export class AppComments {
   @Prop() comments!: number[]
@@ -11,11 +13,6 @@ export class AppComments {
   @State() commentObjects: IComment[] = []
 
   async componentDidLoad() {
-    // await this.comments.forEach((comment) => {
-    //   fetch(`https://hacker-news.firebaseio.com/v0/item/${comment}.json?print=pretty`)
-    //     .then(res => res.json())
-    //     .then(json => this.commentObjects.push(json))
-    // })
     for (let i = 0; i < this.comments.length; i++) {
       const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${this.comments[i]}.json?print=pretty`)
         .then(res => res.json())

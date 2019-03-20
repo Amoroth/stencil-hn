@@ -4,7 +4,9 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 @Component({
-  tag: 'app-comment'
+  tag: 'app-comment',
+  styleUrl: 'app-comment.css',
+  shadow: true
 })
 export class AppComment {
   @Prop() comment!: IComment
@@ -13,7 +15,7 @@ export class AppComment {
 
   componentWillLoad() {
     dayjs.extend(relativeTime)
-    this.relativeTime = dayjs(this.comment.time).fromNow()
+    this.relativeTime = dayjs(this.comment.time * 1000).fromNow()
   }
 
   render() {

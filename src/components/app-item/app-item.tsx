@@ -27,7 +27,7 @@ export class AppItem {
   render() {
     return (
       <div class="column">
-        <div class="story-info">
+        <div class="container">
           <h2>
             <a href={this.storyObject.url}>{this.storyObject.title}</a>
             <span> ({truncateURL(this.storyObject.url)})</span>
@@ -36,7 +36,10 @@ export class AppItem {
           <span> by <stencil-route-link url={`/user/${this.storyObject.by}`}>{this.storyObject.by}</stencil-route-link> |</span>
           <span> {this.relativeTime}</span>
         </div>
-        <app-comments comments={this.storyObject.kids} />
+        <div class="container">
+        <p>{this.storyObject.descendants} comments</p>
+          <app-comments comments={this.storyObject.kids} />
+        </div>
       </div>
     )
   }
