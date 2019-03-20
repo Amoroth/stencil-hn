@@ -1,0 +1,1 @@
+App.loadBundle("chunk-43a42880.js",["exports"],function(n){n.truncateURL=function(n){return n.match(/^(?:https?:\/\/)?(?:www\.)?([^:\/\n]+)/i)[1]}});

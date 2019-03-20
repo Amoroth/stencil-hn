@@ -1,0 +1,1 @@
+const t=t=>t.match(/^(?:https?:\/\/)?(?:www\.)?([^:\/\n]+)/i)[1];export{t as a};
