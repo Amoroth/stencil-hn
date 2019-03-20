@@ -2,8 +2,8 @@
   "namespace": "App",
   "fsNamespace": "app",
   "loader": "../app.js",
-  "core": "app.3fmbkvwj.js",
-  "corePolyfilled": "app.lhjjne5w.js",
+  "core": "app.t8od3b3k.js",
+  "corePolyfilled": "app.lnagisqg.js",
   "components": {
     "app-comment": {
       "bundleIds": {
@@ -19,7 +19,7 @@
     },
     "app-header": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       },
       "encapsulation": "shadow"
     },
@@ -37,7 +37,7 @@
     },
     "app-root": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       },
       "encapsulation": "shadow"
     },
@@ -60,7 +60,7 @@
     },
     "stencil-route": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       }
     },
     "stencil-route-link": {
@@ -70,17 +70,17 @@
     },
     "stencil-route-switch": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       }
     },
     "stencil-router": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       }
     },
     "stencil-router-redirect": {
       "bundleIds": {
-        "$": "v6pq2zcf"
+        "$": "btpzsonh"
       }
     }
   }
