@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.1",
   "description": "Stencil App Starter",
+  "homepage": "https://amoroth.github.io/stencil-hn/",
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "deploy": "gh-pages -d www"
   },
   "dependencies": {
     "@stencil/core": "^0.18.1",
@@ -20,6 +22,7 @@
     "@types/autoprefixer": "^9.4.0",
     "@types/jest": "^24.0.11",
     "autoprefixer": "^9.5.0",
+    "gh-pages": "^2.0.1",
     "workbox-build": "3.4.1"
   }
 }
