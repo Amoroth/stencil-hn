@@ -1,6 +1,6 @@
 export interface IStory {
   by: string
-  descendants: 213
+  descendants: number
   id: number
   kids: number[]
   score: number
