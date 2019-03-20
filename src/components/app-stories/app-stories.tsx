@@ -52,11 +52,11 @@ export class AppStories {
   }
 
   async fetchStories(type: storiesTypes) {
-    const response = await fetch(this.urlHN(type))
-    const allStories = await response.json()
-    const formattedStories = [allStories.slice(0, 20)]
-    for (let i = 1; i < Math.floor(allStories.length / 20); i++) {
-      formattedStories.push(allStories.slice(i * 20, i * 20 + 20))
+    const response = await fetch(this.urlHN(type)).then(res => res.json())
+    const storiesPerPage = 30
+    const formattedStories = [response.slice(0, storiesPerPage)]
+    for (let i = 1; i < Math.floor(response.length / storiesPerPage); i++) {
+      formattedStories.push(response.slice(i * storiesPerPage, i * storiesPerPage + storiesPerPage))
     }
     this.stories = formattedStories
   }
