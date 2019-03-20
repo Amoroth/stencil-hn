@@ -36,9 +36,7 @@ export class AppItem {
           <span> by <stencil-route-link url={`/user/${this.storyObject.by}`}>{this.storyObject.by}</stencil-route-link> |</span>
           <span> {this.relativeTime}</span>
         </div>
-        <div class="comments">
-          {/* <app-comment /> */}
-        </div>
+        <app-comments comments={this.storyObject.kids} />
       </div>
     )
   }

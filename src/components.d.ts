@@ -9,12 +9,29 @@ import '@stencil/core';
 
 import '@stencil/router';
 import {
+  IComment,
+} from './global/types';
+import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
 
 
 export namespace Components {
+
+  interface AppComment {
+    'comment': IComment;
+  }
+  interface AppCommentAttributes extends StencilHTMLAttributes {
+    'comment': IComment;
+  }
+
+  interface AppComments {
+    'comments': number[];
+  }
+  interface AppCommentsAttributes extends StencilHTMLAttributes {
+    'comments': number[];
+  }
 
   interface AppHeader {}
   interface AppHeaderAttributes extends StencilHTMLAttributes {}
@@ -66,6 +83,8 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppComment': Components.AppComment;
+    'AppComments': Components.AppComments;
     'AppHeader': Components.AppHeader;
     'AppItem': Components.AppItem;
     'AppListNav': Components.AppListNav;
@@ -76,6 +95,8 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'app-comment': Components.AppCommentAttributes;
+    'app-comments': Components.AppCommentsAttributes;
     'app-header': Components.AppHeaderAttributes;
     'app-item': Components.AppItemAttributes;
     'app-list-nav': Components.AppListNavAttributes;
@@ -85,6 +106,18 @@ declare global {
     'app-user': Components.AppUserAttributes;
   }
 
+
+  interface HTMLAppCommentElement extends Components.AppComment, HTMLStencilElement {}
+  var HTMLAppCommentElement: {
+    prototype: HTMLAppCommentElement;
+    new (): HTMLAppCommentElement;
+  };
+
+  interface HTMLAppCommentsElement extends Components.AppComments, HTMLStencilElement {}
+  var HTMLAppCommentsElement: {
+    prototype: HTMLAppCommentsElement;
+    new (): HTMLAppCommentsElement;
+  };
 
   interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {}
   var HTMLAppHeaderElement: {
@@ -129,6 +162,8 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-comment': HTMLAppCommentElement
+    'app-comments': HTMLAppCommentsElement
     'app-header': HTMLAppHeaderElement
     'app-item': HTMLAppItemElement
     'app-list-nav': HTMLAppListNavElement
@@ -139,6 +174,8 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'app-comment': HTMLAppCommentElement;
+    'app-comments': HTMLAppCommentsElement;
     'app-header': HTMLAppHeaderElement;
     'app-item': HTMLAppItemElement;
     'app-list-nav': HTMLAppListNavElement;
