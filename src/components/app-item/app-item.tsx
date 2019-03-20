@@ -6,7 +6,9 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 @Component({
-  tag: 'app-item'
+  tag: 'app-item',
+  styleUrl: 'app-item.css',
+  shadow: true
 })
 export class AppItem {
   @Prop() match: MatchResults
@@ -24,16 +26,19 @@ export class AppItem {
 
   render() {
     return (
-      <div>
-        <h2>
-          <a href={this.storyObject.url}>{this.storyObject.title}</a>
-          <span> ({truncateURL(this.storyObject.url)})</span>
-        </h2>
-        <br />
-        <span class="meta">{this.storyObject.score} points |</span>
-        <span> by <stencil-route-link>{this.storyObject.by}</stencil-route-link> |</span>
-        <span> {this.relativeTime}</span>
-        {/* <app-comment /> */}
+      <div class="column">
+        <div class="story-info">
+          <h2>
+            <a href={this.storyObject.url}>{this.storyObject.title}</a>
+            <span> ({truncateURL(this.storyObject.url)})</span>
+          </h2>
+          <span class="meta">{this.storyObject.score} points |</span>
+          <span> by <stencil-route-link>{this.storyObject.by}</stencil-route-link> |</span>
+          <span> {this.relativeTime}</span>
+        </div>
+        <div class="comments">
+          {/* <app-comment /> */}
+        </div>
       </div>
     )
   }
