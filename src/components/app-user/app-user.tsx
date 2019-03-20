@@ -5,7 +5,9 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import { IUser } from '../../global/types'
 
 @Component({
-  tag: 'app-user'
+  tag: 'app-user',
+  styleUrl: 'app-user.css',
+  shadow: true
 })
 export class AppUser {
   @Prop() match: MatchResults
@@ -24,13 +26,15 @@ export class AppUser {
 
   render() {
     return (
-      <div>
-        <h2>User: {this.userObject.id}</h2>
-        <ul>
-          <li><span>Created: </span>{dayjs(this.userObject.created).toNow} {this.relativeTime}</li>
-          <li><span>Karma: </span>{this.userObject.karma}</li>
-          <li class="about" innerHTML={this.userObject.about}></li>
-        </ul>
+      <div class="column">
+        <div class="user-container">
+          <h2>User: {this.userObject.id}</h2>
+          <ul>
+            <li><span>Created: </span>{dayjs(this.userObject.created * 1000).format('YYYY-MM-DD')} | {this.relativeTime}</li>
+            <li><span>Karma: </span>{this.userObject.karma}</li>
+            <li class="about" innerHTML={this.userObject.about}></li>
+          </ul>
+        </div>
       </div>
     )
   }
