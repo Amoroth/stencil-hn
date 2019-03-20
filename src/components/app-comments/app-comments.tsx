@@ -26,7 +26,7 @@ export class AppComments {
       return <app-comment comment={comment} />
     })
     return (
-      <ul style={{ marginLeft: this.indent ? '30px' : '0'}}>
+      <ul class={ this.indent ? 'comment-children' : ''}>
         {comments}
       </ul>
     )
