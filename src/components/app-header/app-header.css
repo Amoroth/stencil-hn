@@ -14,6 +14,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding: 0 10px;
 }
 
 stencil-route-link {
@@ -41,11 +42,9 @@ a img {
 
 .github-link {
   margin-left: auto;
-  margin-right: 10px;
 }
 
 img {
-  margin-left: 10px;
   height: 40px;
   width: 40px;
 }
